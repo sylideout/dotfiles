@@ -1,0 +1,10 @@
+theme = Violet Light
+
+# [text]
+font-size = 20
+
+# [others]
+background-opacity = 0.75
+gtk-titlebar = false
+mouse-hide-while-typing = true
+
