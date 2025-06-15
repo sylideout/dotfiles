@@ -2,6 +2,7 @@ theme = Violet Light
 
 # [text]
 font-size = 20
+font-family = "Monaspace Xenon"
 
 # [others]
 background-opacity = 0.75
