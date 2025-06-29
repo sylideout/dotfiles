@@ -1,4 +1,5 @@
---  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
+-- NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
+-- NOTE: Standard props
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.g.have_nerd_font = true
@@ -22,18 +23,20 @@ vim.o.cursorline = true
 vim.o.scrolloff = 10
 vim.o.confirm = true
 
+-- NOTE: Enable system clipboard for copypaste ops
 vim.schedule(function()
   vim.o.clipboard = 'unnamedplus'
 end)
--- [[ Basic Keymaps ]]
---  See `:help vim.keymap.set()`
+
+-- NOTE: These are keymaps
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+
+-- NOTE: Keymap to shift lines in visual mode
 vim.keymap.set('x', 'J', ":m '>+1<CR>gv=gv", { silent = true })
 vim.keymap.set('x', 'K', ":m '<-2<CR>gv=gv", { silent = true })
 
--- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
--- or just use <C-\><C-n> to exit terminal mode
+-- TODO: Add terminal mode shortcut and fix exit terminal mode
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
@@ -48,8 +51,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
--- [[ Install `lazy.nvim` plugin manager ]]
---    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
+-- NOTE: Loads lazy plugin else downloads it
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
