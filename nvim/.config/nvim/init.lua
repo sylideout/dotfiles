@@ -51,6 +51,13 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+vim.api.nvim_create_autocmd('TermOpen', {
+  desc = 'Opens terminal in insert mode',
+  callback = function()
+    vim.cmd 'startinsert'
+  end,
+})
+
 -- NOTE: Loads lazy plugin else downloads it
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
