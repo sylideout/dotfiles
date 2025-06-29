@@ -1,8 +1,8 @@
 -- NOTE: Here is where you install your plugins.
 return require('lazy').setup({
-  'NMAC427/guess-indent.nvim', -- Detect tabstop and shiftwidth automatically
   -- NOTE: Select plugins here
   -- require 'kickstart.plugins.debug',
+  require 'plugins.guess-indent',
   require 'plugins.lazy-dev',
   require 'plugins.which-key',
   require 'plugins.lsp',
