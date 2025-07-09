@@ -30,10 +30,17 @@ return { -- Autoformat
     end,
     formatters_by_ft = {
       lua = { 'stylua' },
-      python = { 'ruff' },
+      python = { 'ruff_format' },
       rust = { 'rustfmt' },
       -- You can use 'stop_after_first' to run the first available formatter from the list
       -- javascript = { "prettierd", "prettier", stop_after_first = true },
+    },
+    formatters = {
+      ruff_format = {
+        command = 'ruff',
+        args = { 'format', '--stdin-filename', '$FILENAME', '-' },
+        stdin = true,
+      },
     },
   },
 }

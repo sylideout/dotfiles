@@ -6,6 +6,7 @@ return require('lazy').setup({
   require 'plugins.lazy-dev',
   require 'plugins.which-key',
   require 'plugins.lsp',
+  require 'plugins.lint',
   require 'plugins.indent_line',
   require 'plugins.telescope',
   require 'plugins.treesitter',
