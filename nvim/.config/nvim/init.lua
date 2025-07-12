@@ -31,6 +31,7 @@ end)
 -- NOTE: These are keymaps
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+vim.keymap.set('n', '<leader>w', ':lclose<CR>', { desc = 'Close diagnostic [Q]uickfix list' })
 
 -- NOTE: Keymap to shift lines in visual mode
 vim.keymap.set('x', 'J', ":m '>+1<CR>gv=gv", { silent = true })
