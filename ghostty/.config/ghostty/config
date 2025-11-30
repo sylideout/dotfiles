@@ -9,3 +9,4 @@ background-opacity = 0.75
 gtk-titlebar = false
 mouse-hide-while-typing = true
 
+mouse-scroll-multiplier = 0.5
